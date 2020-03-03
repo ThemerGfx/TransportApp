@@ -5,21 +5,9 @@ import {
   TextInput
 } from 'react-native';
 import { Button, Text } from 'react-native-elements'
-// import { withFormik } from 'formik';
-// import * as yup from 'yup';
 
 const Signin = ({navigation}) => {
 
-  // displayNameInput = (
-  //   <View>
-  //     <TextInput
-  //       style={styles.formInput}
-  //       onChangeText={text => props.setFieldValue('displayName', text)}
-  //       placeholder='Display Name'
-  //     />
-  //     {/* <Text style={styles.validationText}>{props.errors.displayName}</Text> */}
-  //   </View>
-  // );
   const pressHandlerAuth = () => {
     navigation.push('Welcome')
   }
@@ -30,20 +18,17 @@ const Signin = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Text h2 style={styles.header}>Transport App</Text>
-      {/* {props.authMode === 'signup' ? displayNameInput : null} */}
       <TextInput
         style={styles.formInput}
         onChangeText={text => props.setFieldValue('email', text)}
         placeholder='email'
       />
-      {/* <Text style={styles.validationText}> {props.errors.email}</Text> */}
       <TextInput
         style={styles.formInput}
         secureTextEntry={true}
         onChangeText={text => props.setFieldValue('password', text)}
         placeholder='password'
       />
-      {/* <Text style={styles.validationText}> {props.errors.password}</Text> */}
       <Button
         onPress={pressHandlerAuth}
         buttonStyle={styles.loginButton}
@@ -93,60 +78,3 @@ const styles = StyleSheet.create({
 });
 
 export default Signin
-
-
-
-
-
-
-
-
-
-// import React, { Component } from 'react';
-// // import Icon from 'react-native-vector-icons/FontAwesome';
-// import { Button, TextInput, View, Text } from 'react-native'
-
-
-// class Signin extends Component {
-//     render() {
-//         const pressHandler = () => {
-//             this.props.navigation.push('Welcome');
-//         }
-//         const pressHandlerUp = () => {
-//             this.props.navigation.push('Signup')
-//         }
-//         return (
-//             <View>
-//                 <TextInput
-//                 placeholder='Email'
-//                 // leftIcon={
-//                 //     <Icon
-//                 //     name='user'
-//                 //     size={24}
-//                 //     color='black'
-//                 //     />
-//                 // }
-//                 />
-//                 <TextInput
-//                 placeholder='Mot de passe'
-//                 // leftIcon={
-//                 //     <Icon
-//                 //     name='user'
-//                 //     size={24}
-//                 //     color='black'
-//                 //     />
-//                 // }
-//                 />
-//                 <Button
-//                     title="Se connecter"
-//                     onPress={pressHandler} 
-//                 />
-//                 <Button
-//                     title="Se"
-//                     onPress={pressHandlerUp} 
-//                 />
-//             </View>
-//         );
-//     }
-// }
-//  export default Signin

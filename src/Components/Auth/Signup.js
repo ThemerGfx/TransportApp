@@ -4,9 +4,7 @@ import {
   View,
   TextInput
 } from 'react-native';
-import { connect } from 'react-redux'
 import { Button, Text } from 'react-native-elements'
-import { signUp } from '../Store/Actions/AuthActions'
 
 class Signup extends Component {
 
@@ -14,25 +12,16 @@ class Signup extends Component {
     super(props);
     this.state = {
       firstname: '',
-      // lastname: '',
-      // phone: '',
+      lastname: '',
+      phone: '',
       email: '',
       password: ''
     };
   }
 
-  pressHandlerAuth = () => {
-    this.props.signUp(this.state)
-    this.props.navigation.push('Signin')
-  }
   pressHandlerToSignUp = () => {
-    this.props.navigation.push('Signup')
+    this.props.navigation.push('Welcome')
   }
-  // onChangeText = () => {
-  //   this.setState({
-  //     [ e.target.id ]: e.target.value
-  //   })
-  // }
   render() {
 
   return (
@@ -47,7 +36,7 @@ class Signup extends Component {
         name="firstname"
         value={this.state.firstname}
       />
-      {/* <TextInput
+      <TextInput
         style={styles.formInput}
         onChange = {e => this.setState({lastname: e.target.value})}
         placeholder='Prénom'
@@ -64,7 +53,7 @@ class Signup extends Component {
         type="number"
         name="phone"
         value={this.state.phone}
-      /> */}
+      />
       <TextInput
         style={styles.formInput}
         onChange = {e => this.setState({email: e.target.value})}
@@ -85,7 +74,7 @@ class Signup extends Component {
         value={this.state.password}
       />
       <Button
-        onPress={this.pressHandlerAuth}
+        onPress={this.pressHandlerToSignUp}
         buttonStyle={styles.loginButton}
         title='Sign up' />
     </View>
@@ -127,12 +116,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.firebase.auth,
-    authError: state.auth.authError
-  }
-}
-
-
-export default connect( mapStateToProps, {signUp} )( Signup )
+export default Signup

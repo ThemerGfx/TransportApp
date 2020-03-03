@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { Text, View } from 'react-native';
 
 class Welcome extends Component {
     render() {

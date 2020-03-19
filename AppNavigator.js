@@ -1,9 +1,10 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 
-import Signin from './src/Components/Auth/Signin';
-import Welcome from './src/Components/Home/Welcome'
-import Signup from './src/Components/Auth/Signup';
+import Signin from './src/screens/Auth/Signin';
+import Welcome from './src/screens/Home/Welcome'
+import Signup from './src/screens/Auth/Signup';
+import AddArticle from './src/screens/Home/AddArticle/AddArticle'
 
 const screens = {
   Signin: {
@@ -14,7 +15,10 @@ const screens = {
   },
   Welcome: {
     screen: Welcome,
-  },
+  },  
+  AddProduct: {
+    screen: AddArticle
+  }
 };
 
 // home stack navigator screens

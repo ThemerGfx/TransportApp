@@ -50,8 +50,6 @@ class Signin extends React.Component {
           buttonStyle={styles.loginButton}
           title='Sign in' />
         <Button
-          backgroundColor='transparent'
-          color='black'
           buttonStyle={styles.switchButton}
           onPress={this.pressHandlerToSignUp}
           title='Switch to Sign up'/>

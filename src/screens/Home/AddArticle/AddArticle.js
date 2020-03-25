@@ -27,7 +27,7 @@ class AddArticle extends Component {
 
   return (
     <View style={styles.container}>
-      <Text h2 style={styles.header}>Transport App</Text>
+      <Text h2 style={styles.header}>Ajouter un article</Text>
       <TextInput
         style={styles.formInput}
         onChange = {e => this.setState({codeArt: e.target.value})}

@@ -1,3 +1,42 @@
+export const commandes = [
+  {
+    code: 1,
+    source: 'Tunis',
+    destination: 'Ariana',
+    dateAjout: '20/02/2020'
+  },
+  {
+    code: 2,
+    source: 'Tunis',
+    destination: 'Bizerte',
+    dateAjout: '21/02/2020'
+  },
+  {
+    code: 3,
+    source: 'Tunis',
+    destination: 'Sousse',
+    dateAjout: '22/02/2020'
+  },
+  {
+    code: 4,
+    source: 'Tunis',
+    destination: 'Mahdia',
+    dateAjout: '23/02/2020'
+  },
+  {
+    code: 5,
+    source: 'Tunis',
+    destination: 'Sfax',
+    dateAjout: '24/02:2020'
+  },
+  {
+    code: 6,
+    source: 'Tunis',
+    destination: 'Gabes',
+    dateAjout: '25/02/2020'
+  }
+]
+
 export const categories = [
   {
     id: 3,

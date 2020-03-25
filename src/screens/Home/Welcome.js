@@ -20,6 +20,12 @@ class Welcome extends React.Component {
   pressHandlerArticle = () => {
     this.props.navigation.push('AddArticle')
   }
+  pressHandlerCaisse = () => {
+    this.props.navigation.push('AddCaisse')
+  }
+  pressHandlerHistoriqueCmd = () => {
+    this.props.navigation.push('HistoriqueCmd')
+  }
 
   render() {
 
@@ -28,11 +34,23 @@ class Welcome extends React.Component {
         <Button
           onPress={this.pressHandlerListe}
           buttonStyle={styles.loginButton}
-          title='Liste des commandes' />
+          title='Liste des commandes'
+        />
         <Button
           buttonStyle={styles.loginButton}
           onPress={this.pressHandlerArticle}
-          title='Ajouter un article'/>
+          title='Ajouter un article'
+        />
+        <Button
+          buttonStyle={styles.loginButton}
+          onPress={this.pressHandlerCaisse}
+          title='Ajouter un montant'
+        />
+        <Button
+          buttonStyle={styles.loginButton}
+          onPress={this.pressHandlerHistoriqueCmd}
+          title='Consulter votre historique'
+        />
       </View>
     );
   }

@@ -28,7 +28,7 @@ class AddCommande extends Component {
 
   return (
     <View style={styles.container}>
-      <Text h2 style={styles.header}>Transport App</Text>
+      <Text h2 style={styles.header}>Ajouter une commande</Text>
       <TextInput
         style={styles.formInput}
         onChange = {e => this.setState({codeCmd: e.target.value})}

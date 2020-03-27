@@ -77,7 +77,7 @@ class AddCommande extends Component {
       />
       <Button
         onPress={this.pressHandlerToAddArticle}
-        buttonStyle={styles.loginButton}
+        buttonStyle={styles.switchButton}
         title='Ajouter Commande' />
     </View>
   );

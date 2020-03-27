@@ -2,17 +2,19 @@ import React from 'react';
 import {
   StyleSheet,
   View,
-  TextInput
+  TextInput,
+  Icon
 } from 'react-native';
 import { Button, Text } from 'react-native-elements'
-import { HelperText } from 'react-native-paper';
 
 class Signin extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      text: ''
+      text: '',
+      email: '',
+      password: ''
     }
   }
 
@@ -27,32 +29,26 @@ class Signin extends React.Component {
 
     return (
       <View style={styles.container}>
-        <Text h2 style={styles.header}>Transport App</Text>
-        <TextInput
-          style={styles.formInput}
-          onChangeText={text => props.setFieldValue('email', text)}
-          placeholder='Email'
-        />      
-        <HelperText
-          type="error"
-          visible={!this.state.text.includes('@')}
-        >
-          Email address is invalid!
-        </HelperText>
-        <TextInput
-          style={styles.formInput}
-          secureTextEntry={true}
-          onChangeText={text => props.setFieldValue('password', text)}
-          placeholder='Password'
-        />
-        <Button
-          onPress={this.pressHandlerAuth}
-          buttonStyle={styles.loginButton}
-          title='Sign in' />
-        <Button
-          buttonStyle={styles.switchButton}
-          onPress={this.pressHandlerToSignUp}
-          title='Switch to Sign up'/>
+          <Text h2 style={styles.header}>Transport App</Text>
+          <TextInput
+            style={styles.formInput}
+            onChange = {e => this.setState({email: e.target.value})}
+            placeholder='Email'
+          />
+          <TextInput
+            style={styles.formInput}
+            secureTextEntry={true}
+            onChange = {e => this.setState({password: e.target.value})}
+            placeholder='Password'
+          />
+          <Button
+            onPress={this.pressHandlerAuth}
+            buttonStyle={styles.loginButton}
+            title='Sign in' />
+          <Button
+            buttonStyle={styles.switchButton}
+            onPress={this.pressHandlerToSignUp}
+            title='Switch to Sign up'/>
       </View>
     );
   }

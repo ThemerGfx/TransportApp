@@ -15,16 +15,16 @@ class Welcome extends React.Component {
   }
 
   pressHandlerListe = () => {
-    this.props.navigation.push('ListeCommandes')
+    this.props.navigation.navigate('ListeCommandes')
   }
   pressHandlerArticle = () => {
-    this.props.navigation.push('AddArticle')
+    this.props.navigation.navigate('AddArticle')
   }
   pressHandlerCaisse = () => {
-    this.props.navigation.push('AddCaisse')
+    this.props.navigation.navigate('AddCaisse')
   }
   pressHandlerHistoriqueCmd = () => {
-    this.props.navigation.push('HistoriqueCmd')
+    this.props.navigation.navigate('HistoriqueCmd')
   }
 
   render() {

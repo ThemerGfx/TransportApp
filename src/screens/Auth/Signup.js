@@ -21,7 +21,7 @@ class Signup extends Component {
   }
 
   pressHandlerToSignUp = () => {
-    this.props.navigation.push('Welcome')
+    // this.props.navigation.push('Welcome')
   }
   render() {
 

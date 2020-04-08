@@ -10,8 +10,7 @@ import ListeCommandes from './src/screens/Home/ListeCommandes/ListeCommandes'
 import AddCaisse from './src/screens/Home/AddCaisse/AddCaisse'
 import HistoriqueCmd from './src/screens/Home/HistoriqueCmd/HistoriqueCmd'
 
-const AuthStack = createBottomTabNavigator({
-  
+const ProjectStack = createBottomTabNavigator({
   Welcome: {
     screen: Welcome,
   },  
@@ -26,52 +25,34 @@ const AuthStack = createBottomTabNavigator({
   },
   Historique: {
     screen: HistoriqueCmd
-  },
-  // Landing: {
-  //   screen: Example,
-  //   navigationOptions: {
-  //     headerTitle: 'Landing',
-  //   },
-  // },
-  // SignIn: {
-  //   screen: Example,
-  //   navigationOptions: {
-  //     headerTitle: 'Sign In',
-  //   },
-  // },
-  // CreateAccount: {
-  //   screen: Example,
-    // navigationOptions: {
-    //   headerTitle: 'Create Account',
-    // },
-  // },
-  // ForgotPassword: {
-  //   screen: Example,
-  //   navigationOptions: {
-  //     headerTitle: 'Forgot Password',
-  //   },
-  // },
-  // ResetPassword: {
-  //   screen: Example,
-  //   navigationOptions: {
-  //     headerTitle: 'Reset Password',
-  //   },
-  // },
+  }
 });
 
-const screens = createStackNavigator({
+const screens = {
   Signin: {
     screen: Signin,
   },
   Signup: {
     screen: Signup
   },
-    // initialRouteName: 'Welcome',
-    // activeColor: '#ffffff',
-    // inactiveColor: '#bda1f7'
-});
+  Welcome: {
+    screen: Welcome,
+  },  
+  Liste: {
+    screen: ListeCommandes
+  },
+  Article: {
+    screen: AddArticle
+  },
+  Caisse: {
+    screen: AddCaisse
+  },
+  Historique: {
+    screen: HistoriqueCmd
+  }
+}
 
 // home stack navigator screens
-const AppNavigator = createStackNavigator({AuthStack});
+const AppNavigator = createStackNavigator(screens);
 
 export default createAppContainer(AppNavigator);

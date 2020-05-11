@@ -1,9 +1,10 @@
 import React from 'react';
-import { FlatList, Text, View, TouchableHighlight, Image } from 'react-native';
+import { FlatList, Text, View, TouchableHighlight, Image, Button } from 'react-native';
 import styles from './styles';
-import { recipes } from '../../../data/dataArrays';
+import { commandes } from '../../../data/dataArrays';
 import { getCategoryName } from '../../../data/MockDataAPI';
-
+import { Ionicons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class ListeCommandes extends React.Component {
 
@@ -12,11 +13,12 @@ export default class ListeCommandes extends React.Component {
   };
 
   renderRecipes = ({ item }) => (
-    <TouchableHighlight onPress={() => this.onPressRecipe(item)}>
-      <View style={styles.container}>
-        <Image style={styles.photo} source={{ uri: item.photo_url }} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{getCategoryName(item.categoryId)}</Text>
+    <TouchableHighlight key={item.code}>
+      <View style={styles.container} key={item.code}>
+        <Text>Date: <Text style={styles.title}>{item.dateAjout}</Text></Text>
+        <Text>Source: <Text style={styles.title}>{item.source}</Text></Text>
+        <Text>Destination: <Text style={styles.title}>{item.destination}</Text></Text>
+        <Icon name='check-circle' style={styles.icon} onPress={() => this.onPressRecipe(item)}/>
       </View>
     </TouchableHighlight>
   );
@@ -28,16 +30,16 @@ export default class ListeCommandes extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
           <FlatList
             vertical
             showsVerticalScrollIndicator={false}
             numColumns={2}
-            data={recipes}
+            data={commandes}
             renderItem={this.renderRecipes}
-            keyExtractor={item => `${item.recipeId}`}
+            keyExtractor={item => `${item.code}`}
           />
-        </View>
+          </View>
       </View>
     );
   }

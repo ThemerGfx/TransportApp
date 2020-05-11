@@ -3,9 +3,11 @@ import {
   StyleSheet,
   View,
   TextInput,
-  Icon
+  Icon,
+  Image
 } from 'react-native';
 import { Button, Text } from 'react-native-elements'
+import logo from './logo.png'
 
 class Signin extends React.Component {
 
@@ -29,7 +31,7 @@ class Signin extends React.Component {
 
     return (
       <View style={styles.container}>
-          <Text h2 style={styles.header}>Transport App</Text>
+          <Image style={styles.logo} source={logo}/>
           <TextInput
             style={styles.formInput}
             onChange = {e => this.setState({email: e.target.value})}
@@ -58,10 +60,15 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: 60
   },
+  logo: {
+    width: 250,
+    height: 250
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
+    // backgroundColor: '#ECDAAC'
   },
   validationText: {
     marginTop: 8,
@@ -80,11 +87,11 @@ const styles = StyleSheet.create({
   loginButton: {
     width: 200,
     marginBottom: 16,
-    backgroundColor: '#6f37be',
+    backgroundColor: '#BB2333',
   },
   switchButton: {
     width: 200,
-    backgroundColor: '#3f51b5'
+    backgroundColor: '#000000'
   }
 });
 

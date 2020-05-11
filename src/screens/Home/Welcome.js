@@ -15,16 +15,16 @@ class Welcome extends React.Component {
   }
 
   pressHandlerListe = () => {
-    this.props.navigation.navigate('ListeCommandes')
+    this.props.navigation.navigate('Liste')
   }
   pressHandlerArticle = () => {
-    this.props.navigation.navigate('AddArticle')
+    this.props.navigation.navigate('Article')
   }
   pressHandlerCaisse = () => {
-    this.props.navigation.navigate('AddCaisse')
+    this.props.navigation.navigate('Caisse')
   }
   pressHandlerHistoriqueCmd = () => {
-    this.props.navigation.navigate('HistoriqueCmd')
+    this.props.navigation.navigate('Historique')
   }
 
   render() {
@@ -33,21 +33,21 @@ class Welcome extends React.Component {
       <View style={styles.container}>
         <Button
           onPress={this.pressHandlerListe}
-          buttonStyle={styles.loginButton}
+          buttonStyle={styles.to_liste}
           title='Liste des commandes'
         />
         <Button
-          buttonStyle={styles.loginButton}
+          buttonStyle={styles.to_article}
           onPress={this.pressHandlerArticle}
           title='Ajouter un article'
         />
         <Button
-          buttonStyle={styles.loginButton}
+          buttonStyle={styles.to_montant}
           onPress={this.pressHandlerCaisse}
           title='Ajouter un montant'
         />
         <Button
-          buttonStyle={styles.loginButton}
+          buttonStyle={styles.to_historique}
           onPress={this.pressHandlerHistoriqueCmd}
           title='Consulter votre historique'
         />
@@ -61,12 +61,63 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#ECDAAC'
   },
-  loginButton: {
+  to_liste: {
     width: 200,
     height: 100,
     marginBottom: 16,
-    backgroundColor: '#6f37be',
+    backgroundColor: '#BB2333',
+    shadowColor: "#0000",
+    shadowOffset: {
+      width: 2,
+      height: 12,
+    },
+    shadowOpacity: 2.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+  },
+  to_article: {
+    width: 200,
+    height: 100,
+    marginBottom: 16,
+    backgroundColor: '#000000',
+    shadowColor: "#0000",
+    shadowOffset: {
+      width: 2,
+      height: 12,
+    },
+    shadowOpacity: 2.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+  },
+  to_montant: {
+    width: 200,
+    height: 100,
+    marginBottom: 16,
+    backgroundColor: '#BA9356',
+    shadowColor: "#0000",
+    shadowOffset: {
+      width: 2,
+      height: 12,
+    },
+    shadowOpacity: 2.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+  },
+  to_historique: {
+    width: 200,
+    height: 100,
+    marginBottom: 16,
+    backgroundColor: '#DFBC5C',
+    shadowColor: "#0000",
+    shadowOffset: {
+      width: 2,
+      height: 12,
+    },
+    shadowOpacity: 2.58,
+    shadowRadius: 16.00,
+    elevation: 24,
   }
 });
 

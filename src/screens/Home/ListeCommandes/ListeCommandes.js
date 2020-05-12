@@ -15,9 +15,9 @@ export default class ListeCommandes extends React.Component {
   renderRecipes = ({ item }) => (
     <TouchableHighlight key={item.code}>
       <View style={styles.container} key={item.code}>
-        <Text>Date: <Text style={styles.title}>{item.dateAjout}</Text></Text>
-        <Text>Source: <Text style={styles.title}>{item.source}</Text></Text>
-        <Text>Destination: <Text style={styles.title}>{item.destination}</Text></Text>
+        <Text style={{color: '#DFBC5C'}}>Date: <Text style={styles.title}>{item.dateAjout}</Text></Text>
+        <Text style={{color: '#DFBC5C'}}>Source: <Text style={styles.title}>{item.source}</Text></Text>
+        <Text style={{color: '#DFBC5C'}}>Destination: <Text style={styles.title}>{item.destination}</Text></Text>
         <Icon name='check-circle' style={styles.icon} onPress={() => this.onPressRecipe(item)}/>
       </View>
     </TouchableHighlight>
@@ -30,7 +30,7 @@ export default class ListeCommandes extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-      <View style={{ flex: 1 }}>
+      <View>
           <FlatList
             vertical
             showsVerticalScrollIndicator={false}

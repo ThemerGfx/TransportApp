@@ -66,11 +66,10 @@ class AddArticle extends Component {
       />
       <TextInput
         style={styles.formInput}
-        secureTextEntry={true}
         onChange = {e => this.setState({volumeArt: e.target.value})}
         placeholder='Volume'
         id="volumeArt"
-        type="volumeArt"
+        type="float"
         name="volumeArt"
         value={this.state.volumeArt}
       />
@@ -91,6 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    // backgroundColor: '#ECDAAC',
   },
   validationText: {
     marginTop: 8,
@@ -101,19 +101,15 @@ const styles = StyleSheet.create({
   formInput: {
     width: 300,
     height: 50,
-    borderColor: '#B5B4BC',
+    borderColor: '#000000',
     borderWidth: 1,
     marginBottom: 16,
-    padding: 8
+    padding: 8,
   },
   loginButton: {
     width: 200,
     marginBottom: 16,
-    backgroundColor: '#6f37be',
-  },
-  switchButton: {
-    width: 200,
-    backgroundColor: '#3f51b5'
+    backgroundColor: '#BB2333',
   }
 });
 

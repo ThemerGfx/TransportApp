@@ -34,6 +34,24 @@ export const commandes = [
     source: 'Tunis',
     destination: 'Gabes',
     dateAjout: '25/02/2020'
+  },
+  {
+    code: 7,
+    source: 'Tunis',
+    destination: 'Bizerte',
+    dateAjout: '21/02/2020'
+  },
+  {
+    code: 8,
+    source: 'Tunis',
+    destination: 'Bizerte',
+    dateAjout: '21/02/2020'
+  },
+  {
+    code: 10,
+    source: 'Tunis',
+    destination: 'Bizerte',
+    dateAjout: '21/02/2020'
   }
 ]
 

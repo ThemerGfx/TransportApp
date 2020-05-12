@@ -10,7 +10,7 @@ class App extends Component {
 
     return (
       <View style={styles.container}>
-        <AppNavigator/>
+        <AppNavigator headerMode="none"/>
       </View>
     );
   }

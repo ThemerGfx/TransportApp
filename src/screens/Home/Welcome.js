@@ -1,9 +1,12 @@
 import React from 'react';
 import {
   StyleSheet,
-  View
+  View,
+  Image,
+  Text
 } from 'react-native';
 import { Button } from 'react-native-elements'
+import logo from './logo.png'
 
 class Welcome extends React.Component {
 
@@ -30,7 +33,12 @@ class Welcome extends React.Component {
   render() {
 
     return (
+      <View style={{flex: 1}}>
+        <View>
+          <Image style={styles.logo} source={logo}/>
+        </View>
       <View style={styles.container}>
+        <Text h2 style={styles.header}>Ajouter un article</Text>
         <Button
           onPress={this.pressHandlerListe}
           buttonStyle={styles.to_liste}
@@ -52,22 +60,33 @@ class Welcome extends React.Component {
           title='Consulter votre historique'
         />
       </View>
+      </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  header: {
+    marginBottom: 20,
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ECDAAC'
+    // backgroundColor: '#DFBC5C'
+  },
+  logo: {
+    width: 70,
+    height: 70,
+    marginLeft: 10
   },
   to_liste: {
     width: 200,
     height: 100,
     marginBottom: 16,
-    backgroundColor: '#BB2333',
+    backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
     shadowOffset: {
       width: 2,
@@ -81,7 +100,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 100,
     marginBottom: 16,
-    backgroundColor: '#000000',
+    backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
     shadowOffset: {
       width: 2,
@@ -95,7 +114,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 100,
     marginBottom: 16,
-    backgroundColor: '#BA9356',
+    backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
     shadowOffset: {
       width: 2,

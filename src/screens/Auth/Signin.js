@@ -30,7 +30,7 @@ class Signin extends React.Component {
   render() {
 
     return (
-      <View style={styles.container}>
+      <View style={styles.container} options={{ headerShown: false }}>
           <Image style={styles.logo} source={logo}/>
           <TextInput
             style={styles.formInput}
@@ -65,6 +65,7 @@ const styles = StyleSheet.create({
     height: 250
   },
   container: {
+    marginTop: 100,
     flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
   formInput: {
     width: 300,
     height: 50,
-    borderColor: '#B5B4BC',
+    borderColor: '#000000',
     borderWidth: 1,
     marginBottom: 16,
     padding: 8

@@ -27,7 +27,7 @@ class AddCaisse extends Component {
       <Text h2 style={styles.header}>Ajouter un montant</Text>
       <TextInput
         style={styles.formInput}
-        onChange = {e => this.setState({codeCmd: e.target.value})}
+        onChange = {e => this.setState({montant: e.target.value})}
         placeholder='Montant'
         id="montant"
         type="float"
@@ -36,7 +36,7 @@ class AddCaisse extends Component {
       />
       <TextInput
         style={styles.formInput}
-        onChange = {e => this.setState({marchandID: e.target.value})}
+        onChange = {e => this.setState({devis: e.target.value})}
         placeholder='Devis'
         id="devis"
         type="text"
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   formInput: {
     width: 300,
     height: 50,
-    borderColor: '#B5B4BC',
+    borderColor: '#000000',
     borderWidth: 1,
     marginBottom: 16,
     padding: 8
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   loginButton: {
     width: 200,
     marginBottom: 16,
-    backgroundColor: '#6f37be',
+    backgroundColor: '#BB2333',
   }
 });
 

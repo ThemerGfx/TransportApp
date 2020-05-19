@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     height: 250
   },
   container: {
-    marginTop: 100,
+    marginTop: 90,
     flex: 1,
     // justifyContent: 'center',
     alignItems: 'center',

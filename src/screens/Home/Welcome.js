@@ -5,7 +5,7 @@ import {
   Image,
   Text
 } from 'react-native';
-import { Button } from 'react-native-elements'
+import { Button, Icon } from 'react-native-elements'
 import logo from './logo.png'
 
 class Welcome extends React.Component {
@@ -34,32 +34,33 @@ class Welcome extends React.Component {
 
     return (
       <View style={{flex: 1}}>
-        <View>
+        <View style={{flexDirection: 'column'}}>
           <Image style={styles.logo} source={logo}/>
+          {/* <Button title='retour' style={styles.retour}></Button> */}
         </View>
-      <View style={styles.container}>
-        <Text h2 style={styles.header}>Ajouter un article</Text>
-        <Button
-          onPress={this.pressHandlerListe}
-          buttonStyle={styles.to_liste}
-          title='Liste des commandes'
-        />
-        <Button
-          buttonStyle={styles.to_article}
-          onPress={this.pressHandlerArticle}
-          title='Ajouter un article'
-        />
-        <Button
-          buttonStyle={styles.to_montant}
-          onPress={this.pressHandlerCaisse}
-          title='Ajouter un montant'
-        />
-        <Button
-          buttonStyle={styles.to_historique}
-          onPress={this.pressHandlerHistoriqueCmd}
-          title='Consulter votre historique'
-        />
-      </View>
+        <View style={styles.container}>
+          <Text h2 style={styles.header}>Ajouter un article</Text>
+          <Button
+            onPress={this.pressHandlerListe}
+            buttonStyle={styles.to_liste}
+            title='Liste des commandes'
+          />
+          <Button
+            buttonStyle={styles.to_article}
+            onPress={this.pressHandlerArticle}
+            title='Ajouter un article'
+          />
+          <Button
+            buttonStyle={styles.to_montant}
+            onPress={this.pressHandlerCaisse}
+            title='Ajouter un montant'
+          />
+          <Button
+            buttonStyle={styles.to_historique}
+            onPress={this.pressHandlerHistoriqueCmd}
+            title='Consulter votre historique'
+          />
+        </View>
       </View>
     );
   }
@@ -80,7 +81,11 @@ const styles = StyleSheet.create({
   logo: {
     width: 70,
     height: 70,
-    marginLeft: 10
+    marginLeft: 10,
+    marginTop: 30
+  },
+  retour: {
+    marginTop: 40
   },
   to_liste: {
     width: 200,

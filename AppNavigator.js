@@ -10,6 +10,7 @@ import ListeCommandes from './src/screens/Home/ListeCommandes/ListeCommandes'
 import AddCaisse from './src/screens/Home/AddCaisse/AddCaisse'
 import HistoriqueCmd from './src/screens/Home/HistoriqueCmd/HistoriqueCmd'
 
+
 const ProjectStack = createBottomTabNavigator({
   Welcome: {
     screen: Welcome,

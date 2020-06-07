@@ -5,7 +5,7 @@ import {
   Image,
   Text
 } from 'react-native';
-import { Button, Icon } from 'react-native-elements'
+import { Button } from 'react-native-elements'
 import logo from './logo.png'
 
 class Welcome extends React.Component {
@@ -26,6 +26,9 @@ class Welcome extends React.Component {
   pressHandlerCaisse = () => {
     this.props.navigation.navigate('Caisse')
   }
+  pressHandlerProfil = () => {
+    this.props.navigation.navigate('Profil')
+  }
   pressHandlerHistoriqueCmd = () => {
     this.props.navigation.navigate('Historique')
   }
@@ -36,10 +39,9 @@ class Welcome extends React.Component {
       <View style={{flex: 1}}>
         <View style={{flexDirection: 'column'}}>
           <Image style={styles.logo} source={logo}/>
-          {/* <Button title='retour' style={styles.retour}></Button> */}
         </View>
         <View style={styles.container}>
-          <Text h2 style={styles.header}>Ajouter un article</Text>
+          <Text h2 style={styles.header}>Bienvenue chez Bourak</Text>
           <Button
             onPress={this.pressHandlerListe}
             buttonStyle={styles.to_liste}
@@ -56,9 +58,14 @@ class Welcome extends React.Component {
             title='Ajouter un montant'
           />
           <Button
+            buttonStyle={styles.to_profil}
+            onPress={this.pressHandlerProfil}
+            title='Consulter mon profil'
+          />
+          <Button
             buttonStyle={styles.to_historique}
             onPress={this.pressHandlerHistoriqueCmd}
-            title='Consulter votre historique'
+            title='Consulter mon historique'
           />
         </View>
       </View>
@@ -89,7 +96,7 @@ const styles = StyleSheet.create({
   },
   to_liste: {
     width: 200,
-    height: 100,
+    height: 80,
     marginBottom: 16,
     backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
@@ -103,7 +110,7 @@ const styles = StyleSheet.create({
   },
   to_article: {
     width: 200,
-    height: 100,
+    height: 80,
     marginBottom: 16,
     backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
@@ -117,7 +124,21 @@ const styles = StyleSheet.create({
   },
   to_montant: {
     width: 200,
-    height: 100,
+    height: 80,
+    marginBottom: 16,
+    backgroundColor: '#DFBC5C',
+    shadowColor: "#0000",
+    shadowOffset: {
+      width: 2,
+      height: 12,
+    },
+    shadowOpacity: 2.58,
+    shadowRadius: 16.00,
+    elevation: 24,
+  },
+  to_profil: {
+    width: 200,
+    height: 80,
     marginBottom: 16,
     backgroundColor: '#DFBC5C',
     shadowColor: "#0000",
@@ -131,7 +152,7 @@ const styles = StyleSheet.create({
   },
   to_historique: {
     width: 200,
-    height: 100,
+    height: 80,
     marginBottom: 16,
     backgroundColor: '#DFBC5C',
     shadowColor: "#0000",

@@ -9,6 +9,7 @@ import AddArticle from './src/screens/Home/AddArticle/AddArticle'
 import ListeCommandes from './src/screens/Home/ListeCommandes/ListeCommandes'
 import AddCaisse from './src/screens/Home/AddCaisse/AddCaisse'
 import HistoriqueCmd from './src/screens/Home/HistoriqueCmd/HistoriqueCmd'
+import Profil from './src/screens/Home/Profil/Profil'
 
 
 const ProjectStack = createBottomTabNavigator({
@@ -50,6 +51,9 @@ const screens = {
   },
   Historique: {
     screen: HistoriqueCmd
+  },
+  Profil: {
+    screen: Profil
   }
 }
 

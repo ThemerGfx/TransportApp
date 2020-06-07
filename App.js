@@ -4,10 +4,10 @@ import { StyleSheet, View } from 'react-native';
 
 import AppNavigator from './AppNavigator';
 
-class App extends Component {
-  
-  render() {
 
+class App extends Component {
+
+  render() {
     return (
       <View style={styles.container}>
         <AppNavigator headerMode="none"/>
@@ -15,7 +15,6 @@ class App extends Component {
     );
   }
 }
-
 
 const styles = StyleSheet.create({
   container: {

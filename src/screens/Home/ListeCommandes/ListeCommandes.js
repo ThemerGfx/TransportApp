@@ -13,11 +13,23 @@ export default class ListeCommandes extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      listArticle: []
+      dataSource: []
     };
   }
 
   componentDidMount() {
+    const url = 'http://192.168.1.2:3000/articles'
+
+    fetch(url)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      this.setState({
+        dataSource: responseJson.body_array
+      })
+    })
+    .catch((error) => {
+      console.log(error)
+    })
     // axios.get("192.168.1.2:3000/articles")
     // .then((response) => {
     //   this.setState({
@@ -40,16 +52,18 @@ export default class ListeCommandes extends React.Component {
     this.props.navigation.navigate('Signin', { item });
   };
 
-  renderRecipes = ({ item }) => (
-    <TouchableHighlight key={item.code}>
-      <View style={styles.container} key={item.code}>
-        <Text style={{color: '#DFBC5C'}}>Date: <Text style={styles.title}>{item.nom}</Text></Text>
-        <Text style={{color: '#DFBC5C'}}>Source: <Text style={styles.title}>{item.categorie_id}</Text></Text>
-        <Text style={{color: '#DFBC5C'}}>Destination: <Text style={styles.title}>{item.local_id}</Text></Text>
-        <Icon name='check-circle' style={styles.icon} onPress={() => this.onPressRecipe(item)}/>
-      </View>
-    </TouchableHighlight>
-  );
+  renderRecipes = ({ item }) => {
+    return (
+        <TouchableHighlight key={item.code}>
+          <View style={styles.container} key={item.code}>
+          <Text style={{color: '#DFBC5C'}}>Date: <Text style={styles.title}>{item.nom}</Text></Text>
+          <Text style={{color: '#DFBC5C'}}>Source: <Text style={styles.title}>{item.categorie_id}</Text></Text>
+          <Text style={{color: '#DFBC5C'}}>Destination: <Text style={styles.title}>{item.local_id}</Text></Text>
+          <Icon name='check-circle' style={styles.icon} onPress={() => this.onPressRecipe(item)}/>
+          </View>
+        </TouchableHighlight>
+    )
+  }
 
   pressHandlerToSignUp = () => {
     this.props.navigation.push('AddArticle')
@@ -71,9 +85,9 @@ export default class ListeCommandes extends React.Component {
             vertical
             showsVerticalScrollIndicator={false}
             numColumns={2}
-            data={this.state.listArticle}
+            data={this.state.dataSource}
             renderItem={this.renderRecipes}
-            keyExtractor={item => `${item.code}`}
+            // keyExtractor={item => `${item.code}`}
           >
           {/* {
             commandes.map((item) => 

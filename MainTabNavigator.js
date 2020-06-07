@@ -129,80 +129,6 @@ PresenceStack.navigationOptions = {
   ),
 };
 
-// const LocationStack = createStackNavigator({
-//   Location: LocationScreen,
-// },
-// {
-//     defaultNavigationOptions: {
-//       header: null
-//     },
-// });
-
-// LocationStack.navigationOptions = {
-//   tabBarLabel: 'Location',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-location' : 'md-location'}
-//     />
-//   ),
-// };
-
-// const VenteStack = createStackNavigator({
-//   Vente: VenteScreen,
-//   }
-//   );
-
-// VenteStack.navigationOptions = {
-//   tabBarLabel: 'Vente',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-price' : 'md-price'}
-//     />
-//   ),
-// };
-
-// const SettingsStack = createStackNavigator({
-//   Settings: SettingsScreen,
-//   },
-  
-// );
-
-// SettingsStack.navigationOptions = {
-//   tabBarLabel: 'Chat',
-//   title: 'Chat Screen',
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-options' : 'md-chatboxes'}
-//     />
-//   ),
-// };
-
-// const LoginStack = createStackNavigator({
-//   Login: LoginScreen,
-// },
-// {
-//     defaultNavigationOptions: {
-//       tabBarVisible: false,
-//       visible: false,
-//     },
-// });
-
-// LoginStack.navigationOptions = {
-//   tabBarLabel: 'Login',
-//   drawerLabel: () => null,
-//   tabBarVisible: false,
-//   visible: false,
-//   tabBarIcon: ({ focused }) => (
-//     <TabBarIcon
-//       focused={focused}
-//       name={Platform.OS === 'ios' ? 'ios-link' : 'md-log-in'}
-//     />
-//   ),
-// };
-
 const AppBottomTabNavigator = createBottomTabNavigator({
   Welcome,
   ListeCommandes,
@@ -212,12 +138,6 @@ const AppBottomTabNavigator = createBottomTabNavigator({
   AddCaisse
 },
 );
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     signOut: () => dispatch(signOut())
-//   }
-// }
 
 export default (createDrawerNavigator({
   Signin: {

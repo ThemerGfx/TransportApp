@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import {
   StyleSheet,
@@ -60,40 +61,42 @@ class AddArticle extends Component {
   }
 
   pressHandlerToAddArticle = () => {
-    let les_artictles = {}
-    les_artictles.nom = this.state.nom
-    les_artictles.categorie_id = this.state.categorie_id
-    les_artictles.owner_id = this.state.owner_id
-    les_artictles.local_id = this.state.local_id
-    console.log(les_artictles)
+    // let les_artictles = {}
+    // les_artictles.nom = this.state.nom
+    // les_artictles.categorie_id = this.state.categorie_id
+    // les_artictles.owner_id = this.state.owner_id
+    // les_artictles.local_id = this.state.local_id
+    // console.log(les_artictles)
 
-    var url = 'http://192.168.1.2:3000/articles'
+    // var url = 'http://192.168.1.2:3000/articles'
 
-    fetch(url, {
-      method: 'POST',
-      body: JSON.stringify(les_artictles),
-      headers: new Headers({
-        'Content-Type': 'application/json'
-      })
-    })
-    .then(res => res.json())
-    .catch(error => console.error('Error: ', error))
-    .then(response => console.log('Success: ', response))
+    // fetch(url, {
+    //   method: 'POST',
+    //   body: JSON.stringify(les_artictles),
+    //   headers: new Headers({
+    //     'Content-Type': 'application/json'
+    //   })
+    // })
+    // .then(res => res.json())
+    // .catch(error => console.error('Error: ', error))
+    // .then(response => console.log('Success: ', response))
+
     // this.props.navigation.push('Welcome')
-    // console.log(this.state);
+
+    console.log(this.state);
     // const articleToAdd = {
     //   nom: this.state.nom,
     //   categorie_id:  this.state.categorie_id,
     //   owner_id:  this.state.owner_id,
     //   local_id:  this.state.local_id
     // }
-    // axios.post('http://192.168.1.2:3000/articles', {articleToAdd})
-    // .then((response) => {
-    //   console.log(response);
-    //   console.log(response.data)
-    // }, (error) => {
-    //   console.log(error);
-    // });
+    axios.post('http://192.168.1.2:3000/articles', this.state)
+    .then((response) => {
+      console.log(response);
+      console.log(response.data)
+    }, (error) => {
+      console.log(error);
+    });
   }
 
   render() {
@@ -143,15 +146,6 @@ class AddArticle extends Component {
           name="local_id"
           defaultValue={this.state.local_id}
         />
-        {/* <TextInput
-          style={styles.formInput}
-          onChange = {e => this.setState({volumeArt: e.target.value})}
-          placeholder='Volume'
-          id="volumeArt"
-          type="float"
-          name="volumeArt"
-          value={this.state.volumeArt}
-        /> */}
         <Button
           onPress={this.pressHandlerToAddArticle}
           buttonStyle={styles.loginButton}
